@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Internet - PW Jarvis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-600 to-purple-800 min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="relative flex flex-col items-center bg-white bg-opacity-10 backdrop-blur-xl rounded-2xl shadow-xl p-10 max-w-lg text-center transform hover:scale-105 transition-transform duration-500">
+        
+        <!-- Floating App Logo -->
+        <div class="animate-float mb-8">
+            <img src="/logo.png" alt="PW Jarvis Logo" class="w-32 h-32 object-cover shadow-lg rounded-full transform hover:scale-110 transition-transform duration-500">
+        </div>
+
+        <!-- App Name with Gradient Text -->
+        <h1 class="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-500 animate-pulse">
+            PW Jarvis
+        </h1>
+
+        <!-- No Internet Text -->
+        <h2 class="text-2xl font-semibold mb-4 text-white">
+            Oops, No Internet Connection!
+        </h2>
+        <p class="text-lg text-gray-200 mb-6">
+            It looks like you're currently offline. Please check your connection and try again.
+        </p>
+
+        <!-- Animated SVG Icon with Glow Effect -->
+        <div class="mb-6">
+            <svg class="w-16 h-16 text-red-500 animate-pulse-glow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+        </div>
+
+        <!-- Retry Button with 3D Effect and Glow -->
+        <button onclick="window.location.reload()" class="px-8 py-3 text-lg font-bold rounded-full bg-gradient-to-r from-blue-400 to-purple-600 text-white shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-500">
+            Retry Connection
+        </button>
+
+        <!-- Floating Bubbles (Decorative Elements) -->
+        <div class="absolute -top-16 -left-16 bg-pink-400 opacity-60 w-32 h-32 rounded-full filter blur-3xl animate-float"></div>
+        <div class="absolute -bottom-16 -right-16 bg-blue-400 opacity-60 w-24 h-24 rounded-full filter blur-2xl animate-float"></div>
+
+        <!-- Subtle Status Message -->
+        <p class="text-sm text-gray-300 mt-8 animate-pulse">
+            We’ll keep trying in the background...
+        </p>
+    </div>
+</body>
+</html>
